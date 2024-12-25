@@ -22,3 +22,8 @@ images:
   - 'gcr.io/$PROJECT_ID/nextjs-app:$COMMIT_SHA'
 
 timeout: '900s'
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+# Specify the service account
+serviceAccount: 'cloud-build-sa@my-website-445708.iam.gserviceaccount.com'
