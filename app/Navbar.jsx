@@ -45,7 +45,7 @@ const Navbar = () => {
             opacity: isOpened ? "0" : "1",
           }}
         >
-          <p className="text-center font-thin">Click me</p>
+          <p className="text-center font-thin text-black">Click me</p>
         </div>
 
         <div
