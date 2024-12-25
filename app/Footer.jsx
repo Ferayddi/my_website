@@ -8,6 +8,7 @@ const Footer = () => {
         <a href="mailto:ortegafred2501@gmail.com">ortegafred2501@gmail.com</a>
       </div>
       <p>Phone number: (+66) 661346438</p>
+      <p>© 2021 Fred Ortega. All rights reserved.</p>
     </footer>
   )
 }
