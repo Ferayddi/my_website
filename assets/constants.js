@@ -2,6 +2,16 @@ const FILES = {
     resume: 'assets/resume.pdf',
 }
 
+const homePage = {
+    paragraph_1: 'I am a computer science graduate, with a passion for technology and innovation. I aim to make my skills \
+            useful. An entrepreneur is like a bird\'s egg. I have met so many smart people, who fails to \
+            envision how their life will span, and I had to learn from great minds that think intelligence can be judged \
+            by a set of answers.',
+    paragraph_2: 'I always found amazing the ability to control computers and networks infrastructure that are located in another country, while being just another human walking along the streets. Knowing that we have the \
+    capability to structure, organize and lead projects that are sent over the clouds, into physical structures that needs to be managed and organized is something very exciting to me. It required a deep understanding of \
+    systems and of their interactions in order to be able to leverage it for specific use, which I love to demonstrate to others. '
+}
+
 const motivationPage = {
     motivation: 'There are two aspects of my motivation. The first is to fulfil my thirst for knowledge and competency. I enjoy the process of gaining competency in varied fields of computer science. \
                 The second aspect is money. I need money '
@@ -227,6 +237,7 @@ module.exports = {
     backgroundPage,
     skillsPage,
     project_portfolio_page,
+    homePage
 
 
 };

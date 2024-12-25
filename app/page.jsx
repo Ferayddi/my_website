@@ -1,8 +1,11 @@
 'use client';
+import Image from 'next/image';
+import Me1 from '/assets/images/Me1.png';
+import { homePage } from '/assets/constants';
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-import Image from "next/image";
+
 import { useEffect, useRef, useState } from "react";
 import Modal from './InteractionModal';
 
@@ -186,14 +189,15 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-around justify-start p-24 relative">
+    <main className="flex min-h-screen flex-col items-center justify-start p-8 md:p-24 relative ">
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} onAccept={handleAcceptModal} />
-      <p className="text-8xl font-thin">
+      <p className="text-6xl md:text-8xl font-thin ">
         <span className="font-semibold">F</span>re
         <span
           ref={nameLetterRef1}
+          className="text-6xl md:text-8xl"
           style={{
-            fontSize: nameLetterProperties.nameLetter1.fontSize,
+            //fontSize: nameLetterProperties.nameLetter1.fontSize,
             position: 'relative',
             textTransform: nameLetterProperties.nameLetter1.textTransform,
             opacity: nameLetterProperties.nameLetter1.opacity,
@@ -207,8 +211,10 @@ export default function Home() {
         </span>
         <span
           ref={nameLetterRef2}
+          className="text-6xl md:text-8xl"
           style={{
-            fontSize: nameLetterProperties.nameLetter2.fontSize,
+            
+            //fontSize: nameLetterProperties.nameLetter2.fontSize,
             position: 'relative',
             textTransform: nameLetterProperties.nameLetter2.textTransform,
             opacity: nameLetterProperties.nameLetter2.opacity,
@@ -223,8 +229,9 @@ export default function Home() {
         r
         <span
           ref={nameLetterRef3}
+          className="text-6xl md:text-8xl"
           style={{
-            fontSize: nameLetterProperties.nameLetter3.fontSize,
+            //fontSize: nameLetterProperties.nameLetter3.fontSize,
             position: 'relative',
             textTransform: nameLetterProperties.nameLetter3.textTransform,
             opacity: nameLetterProperties.nameLetter3.opacity,
@@ -238,8 +245,9 @@ export default function Home() {
         </span>
         <span
           ref={nameLetterRef4}
+          className="text-6xl md:text-8xl"
           style={{
-            fontSize: nameLetterProperties.nameLetter4.fontSize,
+            //fontSize: nameLetterProperties.nameLetter4.fontSize,
             position: 'relative',
             textTransform: nameLetterProperties.nameLetter4.textTransform,
             opacity: nameLetterProperties.nameLetter4.opacity,
@@ -258,7 +266,7 @@ export default function Home() {
         <hr />
       </div>
       <div
-        className="flex flex-row justify-around gap-4 text-lg"
+        className="flex flex-row justify-around gap-4 text-lg flex-wrap"
         style={{ opacity: descriptionsVisible ? 1 : 0, transition: 'opacity 2s ease' }}
       >
         <p>
@@ -298,21 +306,41 @@ export default function Home() {
         }}
       ></span>
 
-      <div className="w-full py-6">
-        <hr />
-      </div>
-      <p className="text-5xl font-thin">Welcome</p>
-      <div className="py-6"></div>
+    
+
+      <div style={{ paddingTop: '2rem', paddingBottom: '2rem' }}></div>
+
+
       <div className="w-full grid grid-cols-12">
-        <div className="col-span-12 md:col-span-4">
+        <div className="col-span-12 md:col-span-6 flex flex-col items-start justify-center">
+          <p className="text-5xl font-thin">Welcome</p>
+          <div className="py-6"></div>
           <p className="text-xl text-justify font-light">
-            I am a computer science graduate, with a passion for technology and innovation. I aim to make my skills
-            useful. In a world where people aim to have the best job, or in a society where corporations redefines the
-            working mindset, an entrepreneur is like a bird&apos;s egg. I have met so many smart people, who fails to
-            envision how their life will span, and I had to learn from great minds that think intelligence can be judged
-            by a set of answers.
+            {homePage.paragraph_1}
           </p>
         </div>
+        <div className="div col-span-12 md:col-span-1 py-6"></div>
+        <div className="div md:col-span-5 col-span-12 flex justify-center items-start">
+          <div className="rounded-full overflow-hidden border-4 border-gray-300" style={{ maxWidth: '30rem', maxHeight: '30rem' }}>
+            <Image className="object-fit" src={Me1} alt="Me" layout="responsive" />
+          </div>
+        </div>
+        
+      </div>
+      
+      <div style={{ paddingTop: '2rem', paddingBottom: '2rem' }}></div>
+
+
+      <div className="flex w-full flex-col items-start md:items-end">
+        <p className="text-5xl font-thin">My passion</p>
+        <div className="py-6"></div>
+        <div className="w-full grid grid-cols-12 ">
+          <div className="col-span-12 md:col-span-6 md:col-start-7">
+            <p className="text-xl text-justify font-light">{homePage.paragraph_2}</p>
+          </div>
+          
+        </div>
+        
       </div>
     </main>
   );
