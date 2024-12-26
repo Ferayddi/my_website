@@ -5,7 +5,7 @@ import { FaHeart, FaBook, FaMoneyBillWave } from 'react-icons/fa';
 import { useAnimation } from '/app/AnimationContext';
 import AnimatedSquare from '/app/AnimatedSquare';
 
-const page = () => {
+export function Page(){
   const { toggleAnimation } = useAnimation();
 
   return (
