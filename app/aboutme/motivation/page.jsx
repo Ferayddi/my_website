@@ -1,12 +1,17 @@
+"use client";
 import React from 'react'
 import { motivationPage } from '/assets/constants';
 import { FaHeart, FaBook, FaMoneyBillWave } from 'react-icons/fa';
-
+import { useAnimation } from '/app/AnimationContext';
+import AnimatedSquare from '/app/AnimatedSquare';
 
 const page = () => {
+  const { toggleAnimation } = useAnimation();
+
   return (
-    <div className="container mx-auto p-4 flex-grow">
+    <div className="px-16 flex-grow flex flex-col justify-center relative">
       <h1 className="text-4xl font-bold mb-8 text-center">Motivation</h1>
+      <AnimatedSquare toggleAnimation={toggleAnimation} />
       <p className="text-3xl font-light mb-8 text-center italic">
       &quot;The only way to do great work is to love what you do.&quot; - Steve Jobs
       </p>

@@ -40,7 +40,7 @@ const Navbar = () => {
       {/*</div>*/}
       {/* Rotating block */}
       <div
-        className={` relative flex w-full flex-col items-center justify-center py-4 
+        className={` relative flex w-full flex-col items-center justify-center py-4 z-10 
         ${
           isRotated ? "rotate-0" : "rotate-0"
         } 

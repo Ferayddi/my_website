@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Me1 from '/assets/images/Me1.png';
 import { homePage } from '/assets/constants';
 import { useAnimation } from "./AnimationContext";
+import AnimatedSquare from './AnimatedSquare';
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -12,14 +13,9 @@ import Modal from './InteractionModal';
 
 export default function Home () {
   const { toggleAnimation } = useAnimation();
-  const [switchColor, setSwitchColor] = useState(false);
   const [descriptionsVisible, setdescriptionsVisible] = useState(false);
   const [letterReset, setLetterReset] = useState(false);
-  const [squareProperties, setSquareProperties] = useState({
-    rotate: '45deg',
-    scale: 4,
-    translate: '0px,0px'
-  });
+  
 
   const [nameLetterProperties, setNameLetterProperties] = useState({
     nameLetter1: {
@@ -180,22 +176,6 @@ export default function Home () {
   useEffect(() => {
     moveLettersAsync();
 
-    const intervalId = setInterval(() => {
-      setSquareProperties((prev) => ({
-        rotate: prev.rotate === '45deg' ? '35deg' : '45deg',
-        scale: prev.scale === 4 ? 3 : 4,
-        translate: (prev.translate === '0px,0px') ? '40px,0px' : '0px,0px'
-      }));
-    }, 3000);
-
-    const colorInterval = setInterval(() => {
-      setSwitchColor((prev) => !prev);
-    }, 3000); // Switch color every 3 seconds
-
-    return () => {
-      clearInterval(intervalId);
-      clearInterval(colorInterval);
-    };
   }, []);
 
   return (
@@ -310,18 +290,9 @@ export default function Home () {
       </div>
 
       <div className="py-6"></div>
-      <span
-        id ="animated-square"
-        className={`w-32 h-32 md:w-52 md:h-52 absolute top-80 left-1/3 
-          ${toggleAnimation ? 'my-other-color-primary' : 'my-color-primary'}
-          `}
-        style={{
-          transform: `rotate(${squareProperties.rotate}) scale(${squareProperties.scale}) translate(${squareProperties.translate})`,
-          opacity: 0.5,
-          zIndex: -1,
-          transition: 'transform 2s ease, background-color 2s ease',
-        }}
-      ></span>
+
+
+      <AnimatedSquare toggleAnimation={toggleAnimation} />
 
     
 
@@ -353,7 +324,7 @@ export default function Home () {
         <div className="py-6"></div>
         <div className="w-full grid grid-cols-12 ">
           <div className="col-span-12 md:col-span-6 md:col-start-7">
-            <p className="text-xl text-justify font-light">{homePage.paragraph_2}</p>
+            <p className="text-2xl text-justify font-thin">{homePage.paragraph_2}</p>
           </div>
           
         </div>

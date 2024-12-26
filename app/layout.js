@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
       <AnimationProvider>
         <Navbar />
         <MainWrapper>
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow flex flex-col">{children}</main>
         </MainWrapper>
         <Footer />
         <Chat />
