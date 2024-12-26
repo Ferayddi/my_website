@@ -48,7 +48,7 @@ const Navbar = () => {
         ${
           toggleAnimation ? "bg-white" : "my-color-primary"
         }`}
-        style={{ transition: 'background-color 2s ease-in' }}
+        style={{ transition: 'background-color 1s ease-in' }}
 
       >
         <div

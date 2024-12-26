@@ -10,7 +10,7 @@ const Footer = () => {
     className={`min-h-[200px] flex flex-col justify-center items-center text-center 
       ${toggleAnimation ? 'bg-white' : 'my-color-primary'}
       `}
-    style={{ transition: 'background-color 2s ease-in' }}
+    style={{ transition: 'background-color 1s ease-in' }}
     >
       <div className="flex flex-row">
         <p>Email:&nbsp;</p>

@@ -3,7 +3,9 @@
 //use client
 'use client'
 import React, { useState } from 'react';
-import { FaRobot, FaTimes } from 'react-icons/fa';
+import Image from 'next/image';
+import AvatarMe from '/assets/images/AvatarMe.png';
+import { FaTimes } from 'react-icons/fa';
 
 const Chat = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +35,9 @@ const Chat = () => {
             <p className="text-center">Send me a message on my phone!</p>
           </div>
         )}
-        <FaRobot className=" text-slate-400 text-6xl hover-vibrate" />
+        <div className="w-16 h-16 md:w-32 md:h-32 rounded-full overflow-hidden hover-vibrate">
+          <Image src={AvatarMe} alt="Avatar" layout="responsive" objectFit="cover" />
+        </div>
       </div>
       {isOpen && (
         <div className="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg w-80 z-50">
