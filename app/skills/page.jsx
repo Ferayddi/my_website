@@ -8,7 +8,7 @@ const page = () => {
       stars.push(
         <svg
           key={i}
-          className={`w-6 h-6 ${i <= rating ? 'text-gray-500' : 'text-gray-300'}`}
+          className={`w-6 h-6 ${i <= rating ? 'my-text-primary' : 'my-text-secondary'}`}
           fill="currentColor"
           viewBox="0 0 24 24"
         >

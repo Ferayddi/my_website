@@ -21,7 +21,7 @@ const ContactPage = () => {
       <h1 className="text-4xl font-bold mb-8 text-center">Contact Me</h1>
       <form className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+          <label className="block my-text-primary text-sm font-bold mb-2" htmlFor="name">
             Name
           </label>
           <input
@@ -34,7 +34,7 @@ const ContactPage = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          <label className="block my-text-primary text-sm font-bold mb-2" htmlFor="email">
             Email
           </label>
           <input
@@ -47,7 +47,7 @@ const ContactPage = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+          <label className="block my-text-primary text-sm font-bold mb-2" htmlFor="message">
             Message
           </label>
           <textarea

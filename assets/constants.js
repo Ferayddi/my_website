@@ -3,6 +3,7 @@ const FILES = {
 }
 
 const homePage = {
+    home_quote: "The best solution is the simplest one",
     paragraph_1: 'I am a computer science graduate, with a passion for technology and innovation. I aim to make my skills \
             useful. An entrepreneur is like a bird\'s egg. I have met so many smart people, who fails to \
             envision how their life will span, and I had to learn from great minds that think intelligence can be judged \

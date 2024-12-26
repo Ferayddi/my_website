@@ -49,3 +49,58 @@ html, body {
   transition-duration: 700ms;
 }
 
+.my-color-primary {
+ background-color: #cacdd1;
+}
+
+.my-other-color-primary {
+  background-color: #7173a0;
+}
+
+.my-color-secondary {
+  background-color: #ffffff;
+}
+
+.my-other-color-secondary {
+  background-color: #d0dceb;
+}
+
+.my-color-tertiary {
+  
+}
+
+.my-other-color-tertiary {
+  
+}
+
+.my-button-primary {
+  background-color: #d1d5db;
+}
+
+.my-other-button-primary {
+  background-color: #1e3a8a;
+}
+
+.my-text-primary {
+  color:  #374151;
+}
+
+.my-other-text-primary {
+  color: #ffffff;
+}
+
+.my-text-secondary {
+  color: #6b7280;
+}
+
+.my-other-text-secondary {
+  color: #ffffff;
+}
+
+.my-border-primary {
+  border-color: #d1d5db;
+}
+
+.my-other-border-primary {
+  border-color: #1e3a8a;
+}

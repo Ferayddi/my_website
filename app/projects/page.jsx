@@ -10,12 +10,12 @@ const ProjectPage = () => {
         {project_portfolio_page.projects.map((project, index) => (
           <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
             <h2 className="text-2xl font-semibold mb-2">{project.name}</h2>
-            <p className="text-sm text-gray-500 mb-4">{project.type}</p>
+            <p className="text-sm my-text-secondary mb-4">{project.type}</p>
             {project.awards && (
               <p className="text-sm text-green-500 mb-4 font-semibold">Awards: {project.awards}</p>
             )}
             <p className="mb-4">{project.description}</p>
-            <p className="text-sm text-gray-700 mb-4">{project.details}</p>
+            <p className="text-sm my-text-primary mb-4">{project.details}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, techIndex) => (
                 <span key={techIndex} className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded">

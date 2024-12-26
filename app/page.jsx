@@ -70,6 +70,7 @@ export default function Home() {
   });
 
   const [isModalOpen, setIsModalOpen] = useState(true);
+  const [switchColor, setSwitchColor] = useState(false);
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -183,15 +184,23 @@ export default function Home() {
       }));
     }, 3000);
 
+    const colorIntervalId = setInterval(() => {
+      setSwitchColor((prev) => !prev);
+    }, 3000);
+
     return () => {
       clearInterval(intervalId);
+      clearInterval(colorIntervalId);
     };
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start p-8 md:p-24 relative ">
+    <main 
+      className={`flex min-h-screen flex-col items-center justify-start p-8 md:p-24 relative overflow-x-hidden z-0 ${switchColor ? 'my-other-color-secondary' : 'my-color-secondary'}`}
+      style={{ transition: 'background-color 2s ease-in' }}
+    >
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} onAccept={handleAcceptModal} />
-      <p className="text-6xl md:text-8xl font-thin ">
+      <p className="text-4xl sm:text-6xl md:text-8xl font-thin ">
         <span className="font-semibold">F</span>re
         <span
           ref={nameLetterRef1}
@@ -261,6 +270,8 @@ export default function Home() {
         </span>
         &nbsp;<span className="font-semibold">O</span>rtega
       </p>
+      
+      <p className="text-sm sm:text-lg">{homePage.home_quote}</p>
 
       <div className="w-full py-6">
         <hr />
@@ -297,12 +308,13 @@ export default function Home() {
 
       <div className="py-6"></div>
       <span
-        className="w-52 h-52 bg-slate-200 absolute top-80 left-1/3"
+        id="animated-square"
+        className={`w-52 h-52  absolute top-80 left-1/3 ${switchColor? 'my-other-color-primary':'my-color-primary'} `}
         style={{
           transform: `rotate(${squareProperties.rotate}) scale(${squareProperties.scale}) translate(${squareProperties.translate})`,
           opacity: 0.5,
           zIndex: -1,
-          transition: 'transform 2s ease',
+          transition: 'transform 2s ease, background-color 2s ease',
         }}
       ></span>
 
@@ -321,7 +333,7 @@ export default function Home() {
         </div>
         <div className="div col-span-12 md:col-span-1 py-6"></div>
         <div className="div md:col-span-5 col-span-12 flex justify-center items-start">
-          <div className="rounded-full overflow-hidden border-4 border-gray-300" style={{ maxWidth: '30rem', maxHeight: '30rem' }}>
+          <div className="rounded-full overflow-hidden border-4 my-border-primary" style={{ maxWidth: '25rem', maxHeight: '30rem' }}>
             <Image className="object-fit" src={Me1} alt="Me" layout="responsive" />
           </div>
         </div>

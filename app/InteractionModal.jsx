@@ -11,7 +11,7 @@ const Modal = ({ isOpen, onClose, onAccept }) => {
         <p className="mb-4">Would you like to watch an interactive web page presentation of myself?</p>
         <div className="flex justify-end">
           <button
-            className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg mr-2"
+            className="my-button-primary my-text-primary px-4 py-2 rounded-lg mr-2"
             onClick={onClose}
           >
             No, thanks

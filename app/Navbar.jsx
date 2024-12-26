@@ -6,6 +6,7 @@ import UpArrowIcon from "./UpArrowIcon.jsx";
 const Navbar = () => {
   const [isOpened, setIsOpened] = useState(false);
   const [isRotated, setIsRotated] = useState(false);
+  const [switchColor, setSwitchColor] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpened(!isOpened);
@@ -19,28 +20,39 @@ const Navbar = () => {
       }
     }, 3000); // Rotate every 3 seconds if not opened
 
-    return () => clearInterval(interval);
+    const colorInterval = setInterval(() => {
+      setSwitchColor((prev) => !prev);
+    }, 3000); // Switch color every 3 seconds
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(colorInterval);
+    };
   }, [isOpened]);
 
   return (
     <div className="relative w-full">
       {/* Background layer */}
-      <div className="absolute inset-0 flex flex-row">
+      {/*<div className="absolute inset-0 flex flex-row">*/}
         {/* Have half the row being white background */}
-        <div className="w-1/2 h-full bg-slate-100 opacity-50"></div>
+        {/* <div className="w-1/2 h-full bg-slate-100 opacity-50"></div>*/}
         {/* Have the other half the row being bg-slate-200 color */}
-        <div className="w-1/2 h-full bg-slate-100 opacity-50"></div>
-      </div>
+        {/*<div className="w-1/2 h-full bg-slate-100 opacity-50"></div> */ }
+      {/*</div>*/}
       {/* Rotating block */}
       <div
-        className={
-          `bg-slate-100 relative flex w-full flex-col items-center justify-center py-4 transition-transform duration-700 ${
-          isRotated ? "rotate-6" : "rotate-0",
-          isOpened ? "opacity-100": "opacity-50"
+        className={` relative flex w-full flex-col items-center justify-center py-4 
+        ${
+          isRotated ? "rotate-0" : "rotate-0"
+        } 
+        ${isOpened ? "opacity-100" : "opacity-50"} 
+        ${
+          switchColor ? "bg-white" : "my-color-primary"
         }`}
+        style={{ transition: 'background-color 2s ease-in' }}
+
       >
         <div
-          className="transition-all duration-700"
           style={{
             opacity: isOpened ? "0" : "1",
           }}
