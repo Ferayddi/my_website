@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Me1 from '/assets/images/Me1.png';
 import { homePage } from '/assets/constants';
+import { useAnimation } from "./AnimationContext";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -9,7 +10,9 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 import { useEffect, useRef, useState } from "react";
 import Modal from './InteractionModal';
 
-export default function Home() {
+export default function Home () {
+  const { toggleAnimation } = useAnimation();
+  const [switchColor, setSwitchColor] = useState(false);
   const [descriptionsVisible, setdescriptionsVisible] = useState(false);
   const [letterReset, setLetterReset] = useState(false);
   const [squareProperties, setSquareProperties] = useState({
@@ -70,7 +73,6 @@ export default function Home() {
   });
 
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [switchColor, setSwitchColor] = useState(false);
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
@@ -173,6 +175,8 @@ export default function Home() {
     setLetterReset(true);
   }
 
+  
+
   useEffect(() => {
     moveLettersAsync();
 
@@ -184,23 +188,22 @@ export default function Home() {
       }));
     }, 3000);
 
-    const colorIntervalId = setInterval(() => {
+    const colorInterval = setInterval(() => {
       setSwitchColor((prev) => !prev);
-    }, 3000);
+    }, 3000); // Switch color every 3 seconds
 
     return () => {
       clearInterval(intervalId);
-      clearInterval(colorIntervalId);
+      clearInterval(colorInterval);
     };
   }, []);
 
   return (
     <main 
-      className={`flex min-h-screen flex-col items-center justify-start p-8 md:p-24 relative overflow-x-hidden z-0 ${switchColor ? 'my-other-color-secondary' : 'my-color-secondary'}`}
-      style={{ transition: 'background-color 2s ease-in' }}
+    className="flex min-h-screen flex-col items-center justify-start p-8 md:p-24 relative overflow-x-hidden"
     >
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} onAccept={handleAcceptModal} />
-      <p className="text-4xl sm:text-6xl md:text-8xl font-thin ">
+      <p className="text-5xl sm:text-6xl md:text-8xl font-thin ">
         <span className="font-semibold">F</span>re
         <span
           ref={nameLetterRef1}
@@ -308,8 +311,10 @@ export default function Home() {
 
       <div className="py-6"></div>
       <span
-        id="animated-square"
-        className={`w-52 h-52  absolute top-80 left-1/3 ${switchColor? 'my-other-color-primary':'my-color-primary'} `}
+        id ="animated-square"
+        className={`w-32 h-32 md:w-52 md:h-52 absolute top-80 left-1/3 
+          ${toggleAnimation ? 'my-other-color-primary' : 'my-color-primary'}
+          `}
         style={{
           transform: `rotate(${squareProperties.rotate}) scale(${squareProperties.scale}) translate(${squareProperties.translate})`,
           opacity: 0.5,
@@ -320,14 +325,14 @@ export default function Home() {
 
     
 
-      <div style={{ paddingTop: '2rem', paddingBottom: '2rem' }}></div>
+      <div className="py-0 md:py-4"> </div>
 
-
+   
       <div className="w-full grid grid-cols-12">
         <div className="col-span-12 md:col-span-6 flex flex-col items-start justify-center">
-          <p className="text-5xl font-thin">Welcome</p>
+          <p className="text-4xl md:text-5xl font-thin">Welcome</p>
           <div className="py-6"></div>
-          <p className="text-xl text-justify font-light">
+          <p className="text-2xl text-justify font-thin">
             {homePage.paragraph_1}
           </p>
         </div>

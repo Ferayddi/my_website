@@ -1,20 +1,15 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import { useAnimation } from "./AnimationContext";
 
 const Footer = () => {
-  const [switchColor, setSwitchColor] = useState(false);
-
-  useEffect(() => {
-    const colorInterval = setInterval(() => {
-      setSwitchColor((prev) => !prev);
-    }, 3000); // Switch color every 3 seconds
-
-    return () => clearInterval(colorInterval);
-  }, []);
+  const {toggleAnimation} = useAnimation();
 
   return (
     <footer 
-    className={`min-h-[200px] flex flex-col justify-center items-center text-center ${switchColor ? 'bg-white' : 'my-color-primary'}`}
+    className={`min-h-[200px] flex flex-col justify-center items-center text-center 
+      ${toggleAnimation ? 'bg-white' : 'my-color-primary'}
+      `}
     style={{ transition: 'background-color 2s ease-in' }}
     >
       <div className="flex flex-row">

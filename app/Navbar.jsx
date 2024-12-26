@@ -2,11 +2,13 @@
 import React, { useState, useEffect } from "react";
 import DownArrowIcon from "./DownArrowIcon.jsx";
 import UpArrowIcon from "./UpArrowIcon.jsx";
+import { useAnimation } from "./AnimationContext";
 
 const Navbar = () => {
+  const { toggleAnimation } = useAnimation();
   const [isOpened, setIsOpened] = useState(false);
   const [isRotated, setIsRotated] = useState(false);
-  const [switchColor, setSwitchColor] = useState(false);
+
 
   const toggleNavbar = () => {
     setIsOpened(!isOpened);
@@ -20,13 +22,10 @@ const Navbar = () => {
       }
     }, 3000); // Rotate every 3 seconds if not opened
 
-    const colorInterval = setInterval(() => {
-      setSwitchColor((prev) => !prev);
-    }, 3000); // Switch color every 3 seconds
 
     return () => {
       clearInterval(interval);
-      clearInterval(colorInterval);
+
     };
   }, [isOpened]);
 
@@ -47,7 +46,7 @@ const Navbar = () => {
         } 
         ${isOpened ? "opacity-100" : "opacity-50"} 
         ${
-          switchColor ? "bg-white" : "my-color-primary"
+          toggleAnimation ? "bg-white" : "my-color-primary"
         }`}
         style={{ transition: 'background-color 2s ease-in' }}
 
