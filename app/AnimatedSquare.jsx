@@ -1,7 +1,7 @@
 import React, { use } from 'react'
 import { useState, useEffect } from 'react'
 
-const AnimatedSquare = ({toggleAnimation}) => {
+const AnimatedSquare = ({toggleAnimation, top_loc = "20rem"}) => {
   const [squareProperties, setSquareProperties] = useState({
       rotate: '45deg',
       scale: 4,
@@ -28,10 +28,11 @@ const AnimatedSquare = ({toggleAnimation}) => {
   return (
     <span
         id ="animated-square"
-        className={`w-32 h-32 md:w-52 md:h-52 absolute top-80 left-1/3 
+        className={`w-32 h-32 md:w-52 md:h-52 absolute left-1/3 
           ${toggleAnimation ? 'my-other-color-primary' : 'my-color-primary'}
           `}
         style={{
+          top: top_loc,
           transform: `rotate(${squareProperties.rotate}) scale(${squareProperties.scale}) translate(${squareProperties.translate})`,
           opacity: 0.5,
           zIndex: -1,

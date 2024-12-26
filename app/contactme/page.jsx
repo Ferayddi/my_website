@@ -23,7 +23,7 @@ const ContactPage = () => {
   return (
     <div className="p-4 flex-grow flex flex-col justify-center relative">
       <h1 className="text-4xl font-bold mb-8 text-center">Contact Me</h1>
-      <AnimatedSquare toggleAnimation={toggleAnimation} />
+
       <form 
       className="mx-auto bg-white p-28 rounded-lg shadow-md w-full"
       style={{ maxWidth: '800px' }}

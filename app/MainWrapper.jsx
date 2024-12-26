@@ -14,6 +14,8 @@ const MainWrapper = ({ children }) => {
       style={{ transition: "background-color 2s ease-in" }}
     >
       <AnimatedSquare toggleAnimation={toggleAnimation} />
+      <div className="py-2"></div>
+      <AnimatedSquare top_loc={'25rem'} toggleAnimation={toggleAnimation} />
       {/* Pass toggleAnimation to all child components */}
       {React.Children.map(children, (child) =>
         React.cloneElement(child)

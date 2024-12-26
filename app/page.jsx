@@ -291,11 +291,6 @@ export default function Home () {
 
       <div className="py-6"></div>
 
-
-      <AnimatedSquare toggleAnimation={toggleAnimation} />
-
-    
-
       <div className="py-0 md:py-4"> </div>
 
    
