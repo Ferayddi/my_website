@@ -5,13 +5,13 @@ import { FaHeart, FaBook, FaMoneyBillWave } from 'react-icons/fa';
 import { useAnimation } from '/app/AnimationContext';
 import AnimatedSquare from '/app/AnimatedSquare';
 
-export function Page(){
+export default function MotivationPage(){
   const { toggleAnimation } = useAnimation();
 
   return (
     <div className="px-16 flex-grow flex flex-col justify-center relative">
       <h1 className="text-4xl font-bold mb-8 text-center">Motivation</h1>
-      <AnimatedSquare toggleAnimation={toggleAnimation} />
+
       <p className="text-3xl font-light mb-8 text-center italic">
       &quot;The only way to do great work is to love what you do.&quot; - Steve Jobs
       </p>
@@ -35,5 +35,3 @@ export function Page(){
     </div>
   );
 };
-
-export default page
