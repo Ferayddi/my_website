@@ -44,7 +44,7 @@ const Navbar = () => {
         ${
           isRotated ? "rotate-0" : "rotate-0"
         } 
-        ${isOpened ? "opacity-100" : "opacity-50"} 
+        ${isOpened ? "opacity-80" : "opacity-50"} 
         ${
           toggleAnimation ? "bg-white" : "my-color-primary"
         }`}
@@ -61,9 +61,11 @@ const Navbar = () => {
 
         <div
           id="navbarContent"
-          className="transition-height ease-in duration-700 overflow-hidden"
+          className="transition-height ease-in duration-700 overflow-hidden flex flex-col"
           style={{
-            maxHeight: isOpened ? "500px" : "0",
+            maxHeight: isOpened ? "1000px" : "0",
+            //height: isOpened ? "auto" : "0",
+            //transition: "height 0.7s ease-in",
           }}
         >
           {/* Your expandable content here */}

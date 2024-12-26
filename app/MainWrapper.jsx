@@ -8,7 +8,7 @@ const MainWrapper = ({ children }) => {
   //console.log(toggleAnimation);
   return (
     <main
-      className={`flex-grow flex flex-col z-0 overflow-x-hidden
+      className={`flex-grow flex flex-col z-0
         ${toggleAnimation ? "my-other-color-secondary" : "my-color-secondary"}
         `}
       style={{ transition: "background-color 1s ease-in" }}
