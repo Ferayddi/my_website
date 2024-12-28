@@ -183,15 +183,15 @@ export default function Home () {
 
   return (
     <main 
-    className="flex min-h-screen flex-col w-full items-center justify-start p-8 md:p-24 relative overflow-x-hidden"
+    className="flex min-h-screen flex-col w-full items-center justify-start p-4 sm:p-8 md:p-24 relative overflow-x-hidden"
     >
       {/* Remove the Modal component */}
       {/* <Modal isOpen={isModalOpen} onClose={handleCloseModal} onAccept={handleAcceptModal} /> */}
-      <p className="text-5xl sm:text-6xl md:text-8xl font-thin text-wrap ">
+      <p className="text-4xl sm:text-6xl md:text-8xl font-thin text-wrap ">
         <span className="font-semibold">F</span>re
         <span
           ref={nameLetterRef1}
-          className="text-5xl sm:text-6xl md:text-8xl"
+          className="text-4xl sm:text-6xl md:text-8xl"
           style={{
             //fontSize: nameLetterProperties.nameLetter1.fontSize,
             position: 'relative',
@@ -207,7 +207,7 @@ export default function Home () {
         </span>
         <span
           ref={nameLetterRef2}
-          className="text-5xl sm:text-6xl md:text-8xl"
+          className="text-4xl sm:text-6xl md:text-8xl"
           style={{
             
             //fontSize: nameLetterProperties.nameLetter2.fontSize,
@@ -225,7 +225,7 @@ export default function Home () {
         r
         <span
           ref={nameLetterRef3}
-          className="text-5xl sm:text-6xl md:text-8xl"
+          className="text-4xl sm:text-6xl md:text-8xl"
           style={{
             //fontSize: nameLetterProperties.nameLetter3.fontSize,
             position: 'relative',
@@ -241,7 +241,7 @@ export default function Home () {
         </span>
         <span
           ref={nameLetterRef4}
-          className="text-5xl sm:text-6xl md:text-8xl"
+          className="text-4xl sm:text-6xl md:text-8xl"
           style={{
             //fontSize: nameLetterProperties.nameLetter4.fontSize,
             position: 'relative',
