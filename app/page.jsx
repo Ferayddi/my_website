@@ -9,7 +9,8 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 
 import { useEffect, useRef, useState } from "react";
-import Modal from './InteractionModal';
+// Remove the import for InteractionModal
+// import Modal from './InteractionModal';
 
 export default function Home () {
   const { toggleAnimation } = useAnimation();
@@ -68,17 +69,19 @@ export default function Home () {
     nameLetter4: { x: 0, y: 0 },
   });
 
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  // Remove the state for the modal
+  // const [isModalOpen, setIsModalOpen] = useState(true);
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  // Remove the modal handlers
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
 
-  const handleAcceptModal = () => {
-    setIsModalOpen(false);
-    // Implement the logic to start the interactive presentation
-    startInteractivePresentation();
-  };
+  // const handleAcceptModal = () => {
+  //   setIsModalOpen(false);
+  //   // Implement the logic to start the interactive presentation
+  //   startInteractivePresentation();
+  // };
 
   const startInteractivePresentation = () => {
     // Play upbeat music
@@ -180,14 +183,15 @@ export default function Home () {
 
   return (
     <main 
-    className="flex min-h-screen flex-col items-center justify-start p-8 md:p-24 relative overflow-x-hidden"
+    className="flex min-h-screen flex-col w-full items-center justify-start p-8 md:p-24 relative overflow-x-hidden"
     >
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal} onAccept={handleAcceptModal} />
-      <p className="text-5xl sm:text-6xl md:text-8xl font-thin ">
+      {/* Remove the Modal component */}
+      {/* <Modal isOpen={isModalOpen} onClose={handleCloseModal} onAccept={handleAcceptModal} /> */}
+      <p className="text-5xl sm:text-6xl md:text-8xl font-thin text-wrap ">
         <span className="font-semibold">F</span>re
         <span
           ref={nameLetterRef1}
-          className="text-6xl md:text-8xl"
+          className="text-5xl sm:text-6xl md:text-8xl"
           style={{
             //fontSize: nameLetterProperties.nameLetter1.fontSize,
             position: 'relative',
@@ -203,7 +207,7 @@ export default function Home () {
         </span>
         <span
           ref={nameLetterRef2}
-          className="text-6xl md:text-8xl"
+          className="text-5xl sm:text-6xl md:text-8xl"
           style={{
             
             //fontSize: nameLetterProperties.nameLetter2.fontSize,
@@ -221,7 +225,7 @@ export default function Home () {
         r
         <span
           ref={nameLetterRef3}
-          className="text-6xl md:text-8xl"
+          className="text-5xl sm:text-6xl md:text-8xl"
           style={{
             //fontSize: nameLetterProperties.nameLetter3.fontSize,
             position: 'relative',
@@ -237,7 +241,7 @@ export default function Home () {
         </span>
         <span
           ref={nameLetterRef4}
-          className="text-6xl md:text-8xl"
+          className="text-5xl sm:text-6xl md:text-8xl"
           style={{
             //fontSize: nameLetterProperties.nameLetter4.fontSize,
             position: 'relative',

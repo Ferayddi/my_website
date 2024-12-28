@@ -56,7 +56,7 @@ const Navbar = () => {
             opacity: isOpened ? "0" : "1",
           }}
         >
-          <p className="text-center font-thin text-black">Click me</p>
+          <p className="text-center font-thin text-black" onClick={toggleNavbar}>Click me</p>
         </div>
 
         <div
@@ -112,7 +112,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="block" onClick={toggleNavbar}>
+        <div className="block" onClick={toggleNavbar} >
           {isOpened ? <UpArrowIcon strokeColor="#94a3b8" /> : <DownArrowIcon strokeColor="#94a3b8" />}
         </div>
       </div>

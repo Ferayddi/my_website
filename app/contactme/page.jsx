@@ -25,7 +25,7 @@ const ContactPage = () => {
       <h1 className="text-4xl font-bold mb-8 text-center">Contact Me</h1>
 
       <form 
-      className="mx-auto bg-white p-28 rounded-lg shadow-md w-full"
+      className="mx-auto bg-white p-4 md:p-28 rounded-lg shadow-md w-full"
       style={{ maxWidth: '800px' }}
       >
         <div className="mb-4">
